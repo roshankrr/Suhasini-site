@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 // import { motion } from "framer-motion";
 import { FaChevronCircleDown } from "react-icons/fa";
-import Pamplate from "./pamplate";
 
 
 const qr='/images/Suhasini_QR.png'
@@ -70,12 +69,12 @@ export function AboutContent (){
 
         {/* CTA (optional) */}
         <div className="mt-8">
-          <a
+          <Link 
             href="https://www.instagram.com/jecrc.suhasini/"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-md shadow-md transition"
           >
             Join Us Today
-          </a>
+          </Link >
         </div>
       </div>
     </section>
@@ -165,9 +164,12 @@ export function FooterContent() {
         </p>
 
         {/* Footer Image */}
-        <img
+        <Image
           src="/suhasini.png"
           alt="Suhasini"
+          width={100}
+          height={100}
+          
           className="h-10 mx-auto sm:mx-0"
         />
       </footer>
