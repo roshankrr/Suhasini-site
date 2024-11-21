@@ -12,22 +12,25 @@ export function Navigation() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-900 text-white z-50">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full bg-gray-900/40 backdrop-blur-md text-white z-50">
+      <div className="container w-full   py-3 flex justify-between items-center">
         <Logo />
-        <ul className="flex space-x-4">
+        <ul className="flex justify-between gap-3 md:space-x-16">
           {sections.map((section) => (
             <li key={section}>
               <button
                 onClick={() => scrollToSection(section)}
-                className="text-lg font-semibold capitalize hover:text-blue-400 transition-colors transform hover:scale-110 transition-transform duration-200"
+                className="md:text-lg text-xs font-semibold capitalize hover:text-blue-400  transform hover:scale-110 transition-transform duration-200"
               >
                 {section}
               </button>
             </li>
           ))}
         </ul>
-        <Logo />
+        <div className="flex  justify-end">
+          <img src="/jecrc.png" className='md:h-14 h-8  ' alt="jecrc logo" />
+        </div>
+        
       </div>
     </nav>
   )
