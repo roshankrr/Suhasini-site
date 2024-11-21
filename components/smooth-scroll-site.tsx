@@ -111,7 +111,7 @@ export default function SmoothScrollSite() {
           <section
             key={section}
             id={section}
-            ref={el => sectionsRef.current[index] = el}
+            ref={el => { sectionsRef.current[index] = el as HTMLDivElement }}
             className="min-h-screen w-full flex bg-black items-center justify-center text-white"
           >
             {section === 'home' && <HomeContent />}
