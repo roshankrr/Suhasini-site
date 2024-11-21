@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import React, { useEffect, useRef } from 'react'
@@ -6,9 +7,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Navigation } from './navigation'
 import { HomeContent, AboutContent, WorkContent, ContactContent, FooterContent } from './section-content'
 
-gsap.registerPlugin(ScrollTrigger)
+trigeer: gsap.registerPlugin(ScrollTrigger)
 
 const sections = ['home', 'about', 'work', 'contact','last']
+// const panels = gsap.utils.toArray(sections.current) as HTMLElement[];
+// panels.forEach((panel: HTMLElement, i) => {
+//   // ...
+// })
 
 export default function SmoothScrollSite() {
   const mainRef = useRef<HTMLDivElement>(null)
@@ -37,18 +42,18 @@ export default function SmoothScrollSite() {
         })
 
         // Animate section content
-        gsap.from(panel.children as HTMLElement[], {
-          y: 50,
-          opacity: 0,
-          duration: 1,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: panel as HTMLElement,
-            start: 'top center',
-            end: 'bottom center',
-            toggleActions: 'play none none reverse',
-          },
-        })
+        gsap.from((panel as HTMLElement).children, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: panel as HTMLElement,
+              start: 'top center',
+              end: 'bottom center',
+              toggleActions: 'play none none reverse',
+            },
+          })
       })
 
       // Animate navigation bar
