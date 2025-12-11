@@ -9,6 +9,7 @@ import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
 
 
 
+
 const qr='/images/Suhasini_QR.png'
 const images=['/images/File3.png','/images/File5.png','/images/File6.png','/images/File16.png','/images/File16.png','/images/File17.png','/images/File18.png','/images/File19.png','/images/File20.png','/images/File23.png']
 export function HomeContent() {
